@@ -6,7 +6,7 @@ var express = require('express')
 // Set up a standard Express app
 var app = express();
   var res = {send: function(){return}};
- app.listen(8080);   
+ app.listen(process.env.PORT || 3000);   
  app.get('/hello', function(req, resp) {
  var question = req.query.q;
  var answer;
