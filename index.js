@@ -180,14 +180,14 @@ function QueryBing(sentence)
         "fb3f0d379a2b405ab74e696ec33012c0")
         .then(function(result){
             var suggestions = []
-
+            if(result){
             result.webPages.value.forEach(function(entry){
                 if(entry.snippet != '')
                 {
                     suggestions.push(entry.snippet)
                 }
             })
-
+            }
             return suggestions;
         });
 }
