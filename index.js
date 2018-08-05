@@ -66,9 +66,11 @@ function GetAutoCompleteResultBing(sentence)
         .then(
             function(result){
                 var suggestions = []
+                if(result){
                 result.suggestionGroups[0].searchSuggestions.forEach(function(entry) {
                     suggestions.push(entry.displayText);
                 });
+                }
                 return suggestions;
             }
         );
